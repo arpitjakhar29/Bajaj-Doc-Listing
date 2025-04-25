@@ -1,0 +1,395 @@
+/* styles.css */
+:root {
+  --primary-color: #1763b0;
+  --secondary-color: #f8f9fa;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-color: #e0e0e0;
+  --button-color: #1763b0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #f8f9fa;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header & Search */
+.header {
+  background-color: var(--primary-color);
+  padding: 15px 20px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.search-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.search-container form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px rgba(23, 99, 176, 0.3);
+}
+
+.search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: var(--light-gray);
+}
+
+/* Main Content Layout */
+.main-content {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Filter Panel */
+.filter-panel {
+  width: 280px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+  position: sticky;
+  top: 20px;
+  padding-bottom: 15px;
+}
+
+.filter-section {
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.filter-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.chevron-icon {
+  color: #777;
+}
+
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filters-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.clear-all {
+  background: none;
+  border: none;
+  color: var(--button-color);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-search {
+  margin-bottom: 15px;
+}
+
+.specialty-search {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-option input {
+  cursor: pointer;
+}
+
+.filter-option span {
+  color: #444;
+}
+
+.specialty-options {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Doctor List */
+.doctor-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.doctor-card {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.doctor-avatar {
+  margin-right: 20px;
+}
+
+.doctor-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.doctor-info {
+  flex: 1;
+}
+
+.doctor-info h2 {
+  margin-bottom: 5px;
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.doctor-qualifications {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.doctor-education {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.doctor-experience {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.doctor-clinic,
+.doctor-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: #666;
+  font-size: 14px;
+}
+
+.clinic-icon,
+.location-icon {
+  display: flex;
+  align-items: center;
+  color: #777;
+}
+
+.doctor-fee-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-width: 120px;
+}
+
+.doctor-fee {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.book-appointment {
+  background-color: white;
+  color: var(--button-color);
+  border: 1px solid var(--button-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.book-appointment:hover {
+  background-color: var(--button-color);
+  color: white;
+}
+
+.no-results {
+  padding: 40px;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #777;
+  font-size: 16px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  color: #e53935;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .filter-panel {
+    width: 100%;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .doctor-card {
+    flex-direction: column;
+  }
+
+  .doctor-avatar {
+    margin-right: 0;
+    margin-bottom: 15px;
+    align-self: center;
+  }
+
+  .doctor-fee-section {
+    align-items: center;
+    margin-top: 15px;
+  }
+}
+.doctor-consultation-modes {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.consult-mode {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+.consult-mode svg {
+  margin-right: 6px;
+}
+
+.consult-mode.video {
+  color: #2563eb;
+  background-color: #dbeafe;
+}
+
+.consult-mode.clinic {
+  color: #16a34a;
+  background-color: #dcfce7;
+}
